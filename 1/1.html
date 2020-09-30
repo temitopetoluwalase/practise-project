@@ -45,6 +45,29 @@
             }
 
         }
+
+
+        var start_number, end_number, temp_number, factors, increment, prime_number;
+increment = 1;
+factors = [];
+start_number = 5;
+temp_number = start_number;
+end_number = 20;
+prime_number = [];
+
+while (temp_number <= end_number) {
+while (increment <= temp_number) {
+if (temp_number%increment === 0){
+factors.push(increment);}
+increment++;}
+if (factors.length === 2){
+prime_number.push(temp_number);}
+  
+  temp_number++;}
+
+
+
+  console.log(prime_number)
         
         
 
