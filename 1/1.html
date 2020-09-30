@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../1/1.css">
+
+    <title>1</title>
+</head>
+<body>
+    
+    <h1>1st js</h1>
+
+        <label>A <br>
+            <input type="number" name="" id="no_one"> <br><br>
+        </label>
+        <label>B <br>
+            <input type="number" name="" id="no_two"> <br><br>
+        </label>
+        <label>Result </label><br>
+        
+        <label type="number" name="" id="result" class=""></label>                
+        
+        <button id="button" onclick="myfunction()">Calculate</button>
+        
+
+    <script>
+
+        function myfunction() {
+            var a = Number(document.getElementById("no_one").value);
+            var b = Number(document.getElementById("no_two").value);
+
+            
+            var result = a + b;
+            document.getElementById("result").innerHTML = result;
+            
+            if  (result <=5) {
+                document.getElementById("result").className = ("purple");
+            }
+            else if (result <=10) {
+                document.getElementById("result").className = ("pink");
+            }
+            else if (result > 10) {
+                document.getElementById("result").className = ("brown");
+            }
+
+        }
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

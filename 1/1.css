@@ -1,0 +1,26 @@
+.purple {
+    background-color: purple;
+    padding: 1px 50px;
+    margin: 20px;
+    border-color: #000;
+    border-radius: 5px;
+    border: 2px solid;
+}
+
+.brown {
+    background-color: brown;
+    padding: 1px 50px;
+    margin: 20px;
+    border-color: #000;
+    border-radius: 5px;
+    border: 2px solid;
+}
+
+.pink {
+    background-color: pink;
+    padding: 1px 50px;
+    margin: 20px;
+    border-color: #000;
+    border-radius: 5px;
+    border: 2px solid;
+}
