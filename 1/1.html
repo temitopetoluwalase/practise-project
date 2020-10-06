@@ -17,59 +17,148 @@
         <label>B <br>
             <input type="number" name="" id="no_two"> <br><br>
         </label>
-        <label>Result </label><br>
+        <label>Result</label><br><br>
         
-        <label type="number" name="" id="result" class=""></label>                
+        <input type="number" name="" id="result" class="">                
         
-        <button id="button" onclick="myfunction()">Calculate</button>
+        <button id="button" onclick="calcSumOfTwoNumbers()">Calculate</button>
+
+        <!--        -->
+        <br><br>
+        <button id="button" onclick="factor(result)">Factors</button>
+        <br><br>
+         
+        <div name="" id="factors"></div><br><br>
+
+        <p id="demo"></p>
+
+        <label>Get the result of Prime Number</label>
+       <div id="primeNumber"></div>
         
 
     <script>
 
-        function myfunction() {
+        /**** function that calculate inputed values ****/
+
+
+        function calcSumOfTwoNumbers() {
+        // get the value inputed for the first number
             var a = Number(document.getElementById("no_one").value);
+        
+        // get the value inputed for the second number
             var b = Number(document.getElementById("no_two").value);
 
-            
+        // Sum of the two numbers and store in another variable  
             var result = a + b;
-            document.getElementById("result").innerHTML = result;
-            
-            if  (result <=5) {
-                document.getElementById("result").className = ("purple");
-            }
-            else if (result <=10) {
-                document.getElementById("result").className = ("pink");
-            }
-            else if (result > 10) {
-                document.getElementById("result").className = ("brown");
-            }
+            console.log(a + b)
+            document.getElementById("result").value = result;
+        
+        noColourCoder(result);
 
+        var factor_result = calculateFactors(result);
+
+
+        document.getElementById("factors").innerHTML = factor_result;
+
+
+        // Revealing if result is a prime factor or not
+
+        if (factor_result.length == 2) {
+            document.getElementById("primeNumber").innerHTML= result + ' ' + 'is a prime number.'
+        }
+        else {
+            document.getElementById("primeNumber").innerHTML= result + ' ' + 'is not a prime number.'
         }
 
+         
 
-        var start_number, end_number, temp_number, factors, increment, prime_number;
+        }
+        
+
+        //Function for colours
+        
+        function noColourCoder(numberToBeColoured) {
+            if  (numberToBeColoured <=5) {
+                document.getElementById("result").className = ("purple");
+            }
+            else if (numberToBeColoured <=10) {
+                document.getElementById("result").className = ("pink");
+            }
+            else if (numberToBeColoured > 10) {
+                document.getElementById("result").className = ("brown");
+            }
+        }
+        
+        //Function for Factors
+        function calculateFactors(numberToBeFactored) {
+                var factors, increment;
+                increment = 1;
+                factors = [];
+                while (increment <= numberToBeFactored) {
+                if (numberToBeFactored%increment === 0) {
+                factors.push(increment);}
+                increment++;}
+               return factors;
+            }
+
+        //Function for Prime Numbers
+
+       
+
+/*
+        var factors = function factor(result) {
+            var temp_number, increment;
+            increment = 1;
+            factors = [];
+            temp_number = result;
+            while (increment <= temp_number) {
+            if (temp_number%increment === 0) {
+            factors.push(increment);}
+            increment++;}
+            return factors;
+        }
+
+            document.getElementById("demo").innerHTML = factors;
+        
+
+var start_number, end_number, temp_number, factors, increment, prime_number;
 increment = 1;
 factors = [];
-start_number = 5;
-temp_number = start_number;
-end_number = 20;
-prime_number = [];
+/*start_number = 5;*/
+/*temp_number = start_number; */
+/*end_number = 20;*/
+/*prime_number = [];*/
 
-while (temp_number <= end_number) {
-while (increment <= temp_number) {
-if (temp_number%increment === 0){
+
+/* while (temp_number <= end_number) { */ 
+/*while (increment <= temp_number) {
+if (temp_number%increment === 0) {
 factors.push(increment);}
 increment++;}
-if (factors.length === 2){
+if (factors.length === 2) {
 prime_number.push(temp_number);}
-  
-  temp_number++;}
 
+/*var input = Number(document.getElementById("input").value); */
+/*
+function factor(start_number) {
+var start_number, temp_number, increment;
+increment = 1;
+factors = [];
+temp_number = start_number;
+prime_number = [];
+while (increment <= temp_number) {
+if (temp_number%increment === 0) {
+factors.push(increment);}
+increment++;}
+return factors;
+}
 
+document.getElementById("dem").innerHTML = factor(50);
+/*  temp_number++;} */
 
-  console.log(prime_number)
+/*console.log(factors)*/
         
-        
+
 
 
 
